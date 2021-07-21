@@ -20,10 +20,10 @@ class App extends React.Component {
             this.setState({ order: JSON.parse(localStorageRef)});
         }
 
-        // this.ref = base.syncState(`${params.storeId}/fishes`, {
-        //     context: this,
-        //     state: "fishes"
-        // });
+        this.ref = base.syncState(`${params.storeId}/fishes`, {
+            context: this,
+            state: "fishes"
+        });
     };
 
     componentDidUpdate() {
@@ -31,7 +31,7 @@ class App extends React.Component {
     };
 
     componentWillUnmount() {
-        // base.removeBinding(this.ref);
+        base.removeBinding(this.ref);
     };
 
     addFish = (fish) => {
